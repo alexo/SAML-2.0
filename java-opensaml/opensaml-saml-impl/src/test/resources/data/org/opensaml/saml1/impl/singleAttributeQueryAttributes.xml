@@ -1,0 +1,3 @@
+<saml1p:AttributeQuery xmlns:saml1p="urn:oasis:names:tc:SAML:1.0:protocol" 
+Resource="resource"
+/>

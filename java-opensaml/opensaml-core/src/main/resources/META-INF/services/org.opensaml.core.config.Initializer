@@ -1,0 +1,2 @@
+org.opensaml.core.XMLObjectProviderInitializer
+org.opensaml.core.GlobalParserPoolInitializer

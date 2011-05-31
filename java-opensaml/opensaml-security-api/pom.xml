@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.opensaml</groupId>
+        <artifactId>opensaml-parent</artifactId>
+        <version>3.0.0-SNAPSHOT</version>
+        <relativePath>../opensaml-parent</relativePath>
+    </parent>
+
+    <name>OpenSAML :: Security API</name>
+    <artifactId>opensaml-security-api</artifactId>
+    <packaging>jar</packaging>
+
+    <dependencies>
+        <!-- Compile Dependencies -->
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>opensaml-util</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>opensaml-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <!--  TODO ideally we don't want xmlsec-api dependent on Apache xmlsec, xmlsec-impl.  -->
+        <dependency>
+            <groupId>org.apache.santuario</groupId>
+            <artifactId>xmlsec</artifactId>
+            <version>1.4.4</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons.ssl</groupId>
+            <artifactId>not-yet-commons-ssl</artifactId>
+        </dependency>
+        
+
+        <!-- Provided Dependencies -->
+
+        <!-- Runtime Dependencies -->
+
+        <!-- Test Dependencies -->
+        <dependency>
+            <groupId>xmlunit</groupId>
+            <artifactId>xmlunit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>opensaml-core</artifactId>
+            <version>${project.version}</version>
+            <type>test-jar</type>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Managed Dependencies -->
+
+    </dependencies>
+</project>
